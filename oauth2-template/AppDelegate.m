@@ -9,12 +9,21 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "PDKeychainBindings.h"
 
 @implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    // if we've been returned to with a valid token, save it
+//    PDKeychainBindings *bindings=[PDKeychainBindings sharedKeychainBindings];
+//    [bindings setObject:token forKey:@"Twitter-Bearer"];
+    return YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];

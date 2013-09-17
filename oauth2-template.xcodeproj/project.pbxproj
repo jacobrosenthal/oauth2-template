@@ -19,6 +19,11 @@
 		5BB1C34017DEEA1200F857DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB1C33F17DEEA1200F857DB /* ViewController.m */; };
 		5BB1C34317DEEA1200F857DB /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB1C34117DEEA1200F857DB /* ViewController_iPhone.xib */; };
 		5BB1C34617DEEA1200F857DB /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB1C34417DEEA1200F857DB /* ViewController_iPad.xib */; };
+		5BB1C35217DEF01B00F857DB /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB1C34F17DEF01B00F857DB /* PDKeychainBindings.m */; };
+		5BB1C35317DEF01B00F857DB /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB1C35117DEF01B00F857DB /* PDKeychainBindingsController.m */; };
+		5BB1C35617DEF02600F857DB /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB1C35517DEF02600F857DB /* Base64.m */; };
+		5BB1C35917DEF0A000F857DB /* TwitterOauth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB1C35817DEF0A000F857DB /* TwitterOauth2.m */; };
+		5BB1C35B17DEFD4E00F857DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB1C35A17DEFD4E00F857DB /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +44,15 @@
 		5BB1C33F17DEEA1200F857DB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5BB1C34217DEEA1200F857DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		5BB1C34517DEEA1200F857DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		5BB1C34E17DEF01B00F857DB /* PDKeychainBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindings.h; sourceTree = "<group>"; };
+		5BB1C34F17DEF01B00F857DB /* PDKeychainBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindings.m; sourceTree = "<group>"; };
+		5BB1C35017DEF01B00F857DB /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
+		5BB1C35117DEF01B00F857DB /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindingsController.m; sourceTree = "<group>"; };
+		5BB1C35417DEF02600F857DB /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		5BB1C35517DEF02600F857DB /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		5BB1C35717DEF0A000F857DB /* TwitterOauth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterOauth2.h; sourceTree = "<group>"; };
+		5BB1C35817DEF0A000F857DB /* TwitterOauth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterOauth2.m; sourceTree = "<group>"; };
+		5BB1C35A17DEFD4E00F857DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB1C35B17DEFD4E00F857DB /* Security.framework in Frameworks */,
 				5BB1C32717DEEA1200F857DB /* UIKit.framework in Frameworks */,
 				5BB1C32917DEEA1200F857DB /* Foundation.framework in Frameworks */,
 				5BB1C32B17DEEA1200F857DB /* CoreGraphics.framework in Frameworks */,
@@ -75,6 +90,7 @@
 		5BB1C32517DEEA1200F857DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5BB1C35A17DEFD4E00F857DB /* Security.framework */,
 				5BB1C32617DEEA1200F857DB /* UIKit.framework */,
 				5BB1C32817DEEA1200F857DB /* Foundation.framework */,
 				5BB1C32A17DEEA1200F857DB /* CoreGraphics.framework */,
@@ -89,8 +105,12 @@
 				5BB1C33617DEEA1200F857DB /* AppDelegate.m */,
 				5BB1C33E17DEEA1200F857DB /* ViewController.h */,
 				5BB1C33F17DEEA1200F857DB /* ViewController.m */,
+				5BB1C35717DEF0A000F857DB /* TwitterOauth2.h */,
+				5BB1C35817DEF0A000F857DB /* TwitterOauth2.m */,
 				5BB1C34117DEEA1200F857DB /* ViewController_iPhone.xib */,
 				5BB1C34417DEEA1200F857DB /* ViewController_iPad.xib */,
+				5BB1C34D17DEF00800F857DB /* Keychain */,
+				5BB1C34C17DEEFFD00F857DB /* Base64 */,
 				5BB1C32D17DEEA1200F857DB /* Supporting Files */,
 			);
 			path = "oauth2-template";
@@ -108,6 +128,26 @@
 				5BB1C33C17DEEA1200F857DB /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5BB1C34C17DEEFFD00F857DB /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				5BB1C35417DEF02600F857DB /* Base64.h */,
+				5BB1C35517DEF02600F857DB /* Base64.m */,
+			);
+			name = Base64;
+			sourceTree = "<group>";
+		};
+		5BB1C34D17DEF00800F857DB /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				5BB1C34E17DEF01B00F857DB /* PDKeychainBindings.h */,
+				5BB1C34F17DEF01B00F857DB /* PDKeychainBindings.m */,
+				5BB1C35017DEF01B00F857DB /* PDKeychainBindingsController.h */,
+				5BB1C35117DEF01B00F857DB /* PDKeychainBindingsController.m */,
+			);
+			name = Keychain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +220,10 @@
 				5BB1C33317DEEA1200F857DB /* main.m in Sources */,
 				5BB1C33717DEEA1200F857DB /* AppDelegate.m in Sources */,
 				5BB1C34017DEEA1200F857DB /* ViewController.m in Sources */,
+				5BB1C35217DEF01B00F857DB /* PDKeychainBindings.m in Sources */,
+				5BB1C35317DEF01B00F857DB /* PDKeychainBindingsController.m in Sources */,
+				5BB1C35617DEF02600F857DB /* Base64.m in Sources */,
+				5BB1C35917DEF0A000F857DB /* TwitterOauth2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

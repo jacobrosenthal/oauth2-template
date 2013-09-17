@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TwitterOauth2.h"
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
