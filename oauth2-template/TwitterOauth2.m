@@ -173,7 +173,7 @@
 
 //Twitter doesnt support user authentication in oauth2
 //just for example how to pop safari auth window with return to this app
-- (void)authenticateUser{
++ (void)authenticateUser{
     
     //check if user token valid
     //assume here its not, proceed with getting a new one
