@@ -9,14 +9,16 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
-#import "PDKeychainBindings.h"
+//#import "PDKeychainBindings.h"
+//#import "TwitterOauth2.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    // if we've been returned to with a valid token, save it
+    // some applications need user authentication
+    //if we've been returned to with a valid user token, save it
 //    PDKeychainBindings *bindings=[PDKeychainBindings sharedKeychainBindings];
-//    [bindings setObject:token forKey:@"Twitter-Bearer"];
+//    [bindings setObject:token forKey:@"Service-User-Bearer"];
     return YES;
 }
 
@@ -25,6 +27,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.
+    
+    
+    //if we need to user auth we can redirect here
+    //[TwitterOauth2 authenticateUser];
+    
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
     } else {

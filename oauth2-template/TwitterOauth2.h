@@ -31,9 +31,6 @@
 - (id)initWithDelegate:(id<TwitterOauth2Delgate>)delegate;
 - (void)retreiveTrendsByWOEID:(NSString*)WOEID;
     
-- (BOOL)appTokenExists;
 + (BOOL)isAppTokenValid;
-- (BOOL)isValidUser;
-- (void)authenticateApp;
-- (void)authenticateUser;
++ (void)authenticateUser;
 @end

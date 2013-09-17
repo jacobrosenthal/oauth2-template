@@ -71,7 +71,7 @@
         
     }else if(token){
         PDKeychainBindings *bindings=[PDKeychainBindings sharedKeychainBindings];
-        [bindings setObject:token forKey:@"Twitter-OAUTH2-Bearer"];
+        [bindings setObject:token forKey:@"Twitter-Application-Bearer"];
         
         [trendsDelegate didReceiveValidAppAuth];
         
@@ -94,7 +94,7 @@
     
     PDKeychainBindings *bindings=[PDKeychainBindings sharedKeychainBindings];
     
-    NSString *auth = [@"Bearer " stringByAppendingString:[bindings objectForKey:@"Twitter-OAUTH2-Bearer"]];
+    NSString *auth = [@"Bearer " stringByAppendingString:[bindings objectForKey:@"Twitter-Application-Bearer"]];
     
     [request setValue:auth forHTTPHeaderField:@"Authorization"];
     
@@ -118,7 +118,7 @@
     //just check if we have one local
     //if we end up bouncing an invalid token we can attempt to reauth it
     PDKeychainBindings *bindings=[PDKeychainBindings sharedKeychainBindings];
-    if([bindings objectForKey:@"Twitter-OAUTH2-Bearer"]){
+    if([bindings objectForKey:@"Twitter-Application-Bearer"]){
         return YES;
     }
     else{
@@ -175,13 +175,37 @@
 //just for example how to pop safari auth window with return to this app
 - (void)authenticateUser{
     
-
+    //check if user token valid
+    //assume here its not, proceed with getting a new one
+    NSURL *url = [NSURL URLWithString:@"http://api.jjrosent.zrg.cc:40000/o/authorize?response_type=code&client_id=%23%25IQtfWe%5CR6S%28C9%2BM%28C2%5CG%3F9-d%27%3BG%5E%27%3CX%26hvD8ur&state=random_state_string"];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:3.0];
+    
+    [request setHTTPMethod:@"GET"];
+    
+    //NSString *args = @"client_id=&client_secret=vD6Mh@nb_=_Ui9?pOz9EYR/1|@mWrb&lE>+U\7NjwRs\\j(%M!/+WF#t\"yzxBB\"J=uq_nUhKul@V3]b]?1[COz\tr{#xd`s69hL;:uOV?m>b-L>+HPFJni[soVLf_q%ht&grant_type=password&username=jacob&password=jacob";
+    //NSData *requestBody = [args dataUsingEncoding:NSUTF8StringEncoding];
+    //[request setHTTPBody:requestBody];
+    
+    [request setValue:@"application/x-www-form-urlencoded;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    //if no or invalid user token launch safari to get a new one
+    // Open safari browser with get request
+    @try {
+        // Get loginUrl
+        if (![[UIApplication sharedApplication] openURL:url]) {
+            NSLog(@"%@%@",@"Failed to open url: ", [url description]);
+        }
+    }
+    @catch (NSException *exception) {
+        ;
+    }
 }
 
 + (BOOL)isAppTokenValid{
     //do we even have one?
     PDKeychainBindings *bindings=[PDKeychainBindings sharedKeychainBindings];
-    if([bindings objectForKey:@"Twitter-OAUTH2-Bearer"]){
+    if([bindings objectForKey:@"Twitter-Application-Bearer"]){
         //
         return YES;
     }
