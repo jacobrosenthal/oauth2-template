@@ -33,4 +33,5 @@
     
 + (BOOL)isAppTokenValid;
 + (void)authenticateUser;
+- (void)authenticateApplication;
 @end

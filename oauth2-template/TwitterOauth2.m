@@ -132,7 +132,7 @@
 }
 
 //https://dev.twitter.com/docs/auth/application-only-auth
-- (void)authenticateApp{
+- (void)authenticateApplication{
     
     NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/oauth2/token"];
     

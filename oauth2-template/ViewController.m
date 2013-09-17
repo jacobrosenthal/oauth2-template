@@ -33,7 +33,7 @@
     twitter = [[TwitterOauth2 alloc] initWithDelegate:self];
     
     //twitter doesnt have a way to check for valid auth, so just send for the token again
-    [twitter authenticateApp];
+    [twitter authenticateApplication];
     
 }
 
